@@ -9,9 +9,10 @@ This is a simple Python3 / Django application intended to provide a working exam
 ### Pre-requisites
 * Docker cli
 
-Other pre-reqs are handled via docker / bootstrapped via sqllite but for information for manual run details are provided below:
+Below pre-reqs are handled via docker / bootstrapped via sqllite:
 * Django 4.2
 * Python >= 3.9
+* basic auth user (pre-loaded)
 
 #### Run via docker
 From the inscribe_file_api/ directory run the following:
@@ -21,8 +22,10 @@ docker-compose up
 ```
 
 ##### Troubleshooting
-If you encounter a permission denied error during execution of entrypoint.sh by docker container you may just need to make the file executable again.
-This is handled in the DockerFile but does not work for some reason. Seems to be a known issue which more time may resolve: https://stackoverflow.com/questions/70928077/permission-denied-while-executing-script-entrypoint-sh-from-dockerfile-in-kubern
+*If you encounter a permission denied error during execution of entrypoint.sh by docker container you may just need to make the file executable again.
+This is handled in the DockerFile but does not work for some reason. 
+Seems to be a known issue which more time may resolve: 
+https://stackoverflow.com/questions/70928077/permission-denied-while-executing-script-entrypoint-sh-from-dockerfile-in-kubern*
 ```console
 cd inscribe_file_api/
 chmod +x entrypoint.sh
